@@ -1,2 +1,2 @@
 # shareThoughts
-Just a demo repository
+Sample Rails Application used for initial commit.
