@@ -1,0 +1,7 @@
+<% if @feedback_status == "Success"%>
+$('.feedback_status').css({'color': 'green'});
+$('.feedback_status').html("Successfully send feedback. Will get back to you soon.");
+<% else %>
+$('.feedback_status').css({'color': 'red'});
+$('.feedback_status').html("Not able to send feedback. Please Try later.");
+<% end %>

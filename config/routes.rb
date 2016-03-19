@@ -24,6 +24,23 @@ ShareThoughts::Application.routes.draw do
   #       get 'sold'
   #     end
   #   end
+  resources :user_sessions do
+    collection do
+      get :login
+    end
+  end
+
+  # users resources
+  resources :users do
+    collection do
+      post :go_to_email
+      post :feedback
+      get :signup
+    end
+  end
+
+  match 'forgot_password' => 'user_sessions#forgot_password', :as => :forgot_password, :via => :post
+  match 'logout' => "user_sessions#destroy", :as => :logout
 
   # Sample resource route with sub-resources:
   #   resources :products do

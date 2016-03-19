@@ -1,0 +1,16 @@
+$('#email_error').html("");
+$('#pass_error').html("");
+$('#error_login').html("");
+<% if @status == 1 %>
+$('#error_login').html("Issue while login.");
+<% if @session.errors.any? %>
+<% unless @session.errors[:email].blank?  %>
+$('#email_error').html('Email <%= @session.errors[:email][0].downcase %>');
+<% end %>
+<% unless @session.errors[:password].blank? %>
+$('#pass_error').html('Password <%= @session.errors[:password][0].downcase %>');
+<% end %>
+<% end %>
+<% else %>
+<%= redirect_to root_path %>
+<% end %>

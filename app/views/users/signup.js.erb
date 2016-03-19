@@ -1,0 +1,27 @@
+$('#first_name_error').html("");
+$('#last_name_error').html("");
+$('#email_error').html("");
+$('#password_error').html("");
+$('#mobile_error').html("");
+<% if @status == 0 %>
+$('#signup_error').html("Issue while creating new credentials. Please try again later.");
+<% if @user.errors.any? %>
+<% unless @user.errors[:first_name].blank? %>
+$('#first_name_error').html("<%= @user.errors[:first_name][0].capitalize %>");
+<% end %>
+<% unless @user.errors[:last_name].blank? %>
+$('#last_name_error').html("<%= @user.errors[:last_name][0].capitalize %>");
+<% end %>
+<% unless @user.errors[:email].blank? %>
+$('#email_error').html("<%= @user.errors[:email][0].downcase %>");
+<% end %>
+<% unless @user.errors[:password].blank? %>
+$('#password_error').html("<%= @user.errors[:password][0].downcase %>");
+<% end %>
+<% unless @user.errors[:mobile].blank? %>
+$('#mobile_error').html("<%= @user.errors[:mobile][0].downcase %>");
+<% end %>
+<% end %>
+<% else %>
+<%= redirect to root_path %>
+<% end %>
