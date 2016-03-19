@@ -26,6 +26,7 @@ gem 'httparty', '0.9.0'
 gem 'json', '1.8.3'
 gem 'paperclip','2.8.0'
 gem "remotipart", "~> 1.0"
+gem 'omniauth-facebook'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

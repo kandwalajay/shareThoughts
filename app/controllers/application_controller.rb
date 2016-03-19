@@ -14,16 +14,6 @@ class ApplicationController < ActionController::Base
     config["FacebookAppId"]
   end
 
-# method for checking whether page demo is executed by the user
-  def check_demos userId , demo_type
-    demo = Demo.demo_data userId, demo_type
-    unless demo.blank?
-      return true
-    else
-      return false
-    end
-  end
-
   # method for checking whether user has admin access or not
   def is_admin_access
     if session[:is_admin] == "true"

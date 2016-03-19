@@ -2,4 +2,15 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+ require_user_message: "Please logout to access the requested page."
+ require_no_user_message: "Please logout to access the requested page."
+ signup_success: "Your account is created successfully."
+ signup_failure: "Issue while creating account. Please try again."
+ login_success: "You are Logged-in successfully in your account."
+ login_failure: "Issue while logging in. Please try again."
+ logout_message: "You are successfully Logout from your account."
+ facebook_failure_1: "Not able to login in through facebook credentials provided."
+ go_to_email_error_1: "Mail domain not found."
+ Failure: "Failure"
+ Success: "Success"
+

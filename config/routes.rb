@@ -65,7 +65,9 @@ ShareThoughts::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  get 'auth/:provider/callback', to: 'user_session#create'
+  get 'logout', to: 'sessions#destroy'
+  root :to => 'home#home'
 
   # See how all your routes lay out with "rake routes"
 
